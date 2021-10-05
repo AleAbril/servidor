@@ -5,7 +5,7 @@ function Boton_1() {
 	console.log("boton 1");
 	//document.getElementById("sensor").innerHTML="led on";
 	message = new Paho.MQTT.Message("on");
-    	message.destinationName = "lfrenteriax@hotmail.com/test1";
+    	message.destinationName = "jaabril.fie@unach.edu.ec/t1";
     	client.send(message);
   
 }
@@ -13,7 +13,7 @@ function Boton_2(){
 	//alert("led off");
 	console.log("boton 2");
 	message = new Paho.MQTT.Message("off");
-    	message.destinationName = "lfrenteriax@hotmail.com/test1";
+    	message.destinationName = "jaabril.fie@unach.edu.ec/t1";
     	client.send(message);
 	//document.getElementById("sensor").innerHTML="led off";
 }
@@ -33,8 +33,8 @@ function Boton_2(){
   client.onMessageArrived = onMessageArrived;
   var options = {
    useSSL: false,
-    userName: "lfrenteriax@hotmail.com",
-    password: "lfrenteriax",
+    userName: "jaabril.fie@unach.edu.ec/t1",
+    password: "jaa123",
     onSuccess:onConnect,
     onFailure:doFail
   }
@@ -47,9 +47,9 @@ function Boton_2(){
     // Once a connection has been made, make a subscription and send a message.
     console.log("Conectado...");
 	
-    client.subscribe("lfrenteriax@hotmail.com/test");
+    client.subscribe("jaabril.fie@unach.edu.ec/t2");
     message = new Paho.MQTT.Message("hola desde la web");
-    message.destinationName = "lfrenteriax@hotmail.com/test1";
+    message.destinationName = "jaabril.fie@unach.edu.ec/t2";
     client.send(message);
 	
   }
